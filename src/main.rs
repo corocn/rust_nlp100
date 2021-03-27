@@ -22,8 +22,34 @@ pub fn p001() {
     println!("{}", str);
 }
 
-// 単語に分解し，各単語の（アルファベットの）文字数を先頭から出現順に並べたリストを作成せよ．
+// 「パトカー」＋「タクシー」の文字を先頭から交互に連結して文字列「パタトクカシーー」を得よ．
 pub fn p002() {
+    let str1 = String::from("パトカー");
+    let str2 = String::from("タクシー");
+
+    let chars1: Vec<_> = str1.chars().collect();
+    let chars2: Vec<_> = str2.chars().collect();
+
+    let mut chars = vec![];
+
+    for (index, char) in chars1.into_iter().enumerate() {
+        // dbg!(char1);
+        let x1 = char;
+        let x2 = *chars2.get(index).unwrap();
+
+        chars.push(x1.to_string());
+        chars.push(x2.to_string());
+    }
+
+    // dbg!(&chars);
+
+    let joined: String = chars.join("");
+
+    println!("{}", joined);
+}
+
+// 単語に分解し，各単語の（アルファベットの）文字数を先頭から出現順に並べたリストを作成せよ．
+pub fn p003() {
     let v = vec![1, 2, 3, 4, 5];
 
     let str = String::from("Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics.");
@@ -45,4 +71,8 @@ pub fn p002() {
     for (count, word) in vw.into_iter() {
         println!("{}", word);
     }
+}
+
+pub fn p004() {
+
 }
