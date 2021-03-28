@@ -117,7 +117,7 @@ pub fn p005() {
     dbg!(v);
 
     let text = "I am an NLPer";
-    let list: Vec<&str> = text.split("").filter(|x| *x != "").collect();
+    let list: Vec<&str> = text.split("").filter(|&x| x != "").collect();
     let v = p005_bigram(&list);
     dbg!(v);
 }
