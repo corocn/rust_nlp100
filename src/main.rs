@@ -1,6 +1,6 @@
 // https://nlp100.github.io/ja/
 fn main() {
-    p004();
+    p005();
 }
 
 // 文字列”stressed”の文字を逆に（末尾から先頭に向かって）並べた文字列を得よ
@@ -106,4 +106,35 @@ pub fn p004() {
     }
 
     dbg!(&element2word.get("Be").unwrap());
+}
+
+// 与えられたシーケンス（文字列やリストなど）からn-gramを作る関数を作成せよ．
+// この関数を用い，”I am an NLPer”という文から単語bi-gram，文字bi-gramを得よ．
+pub fn p005() {
+    let text = "I am an NLPer";
+    let list: Vec<&str> = text.split(" ").collect();
+    let v = p005_bigram(&list);
+    dbg!(v);
+
+    let text = "I am an NLPer";
+    let list: Vec<&str> = text.split("").filter(|x| *x != "").collect();
+    let v = p005_bigram(&list);
+    dbg!(v);
+}
+
+pub fn p005_bigram<'a>(list: &'a Vec<&str>) -> Vec<Vec<&'a str>> {
+    let mut bigram: Vec<Vec<&str>> = vec![];
+
+    let mut i1 = list.iter();
+    let mut i2  = list.iter();
+
+    i2.next();
+
+    let i = i1.zip(i2);
+
+    for (x1, x2) in i {
+        bigram.push(vec![*x1, *x2]);
+    }
+
+    bigram
 }
