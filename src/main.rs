@@ -125,8 +125,8 @@ pub fn p005() {
 pub fn p005_bigram<'a>(list: &'a Vec<&str>) -> Vec<Vec<&'a str>> {
     let mut bigram: Vec<Vec<&str>> = vec![];
 
-    let mut i1 = list.iter();
-    let mut i2  = list.iter();
+    let i1 = list.iter();
+    let mut i2 = list.iter();
 
     i2.next();
 
