@@ -1,6 +1,6 @@
 // https://nlp100.github.io/ja/
 fn main() {
-    p002();
+    p004();
 }
 
 // 文字列”stressed”の文字を逆に（末尾から先頭に向かって）並べた文字列を得よ
@@ -73,6 +73,37 @@ pub fn p003() {
     }
 }
 
-pub fn p004() {
+// 単語に分解し，1, 5, 6, 7, 8, 9, 15, 16, 19番目の単語は先頭の1文字，それ以外の単語は先頭の2文字を取り出し，
+// 取り出した文字列から単語の位置（先頭から何番目の単語か）への連想配列（辞書型もしくはマップ型）を作成せよ．
 
+use std::collections::HashMap;
+
+pub fn p004() {
+    let text = "Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can.";
+    let text = text.replace(".", "");
+
+    let words: Vec<_> = text.split(" ").collect();
+
+    let first_letters = vec![1, 5, 6, 7, 8, 9, 15, 16, 19];
+
+    let mut element2word = HashMap::new();
+
+    for (index, word) in words.into_iter().enumerate() {
+        let n = index + 1;
+
+        let pick = if first_letters.contains(&n) {
+            let first = word.chars().next().unwrap().to_string();
+            first
+        } else {
+            let mut p = word.chars();
+            let first = p.next().unwrap().to_string();
+            let second = p.next().unwrap().to_string();
+
+            format!("{}{}", &first, &second)
+        };
+
+        element2word.insert(pick, n);
+    }
+
+    dbg!(&element2word.get("Be").unwrap());
 }
