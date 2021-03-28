@@ -50,7 +50,7 @@ pub fn p002() {
 
 // 単語に分解し，各単語の（アルファベットの）文字数を先頭から出現順に並べたリストを作成せよ．
 pub fn p003() {
-    let v = vec![1, 2, 3, 4, 5];
+    let _v = vec![1, 2, 3, 4, 5];
 
     let str = String::from("Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics.");
     let split_word = &[' ', ',', '.'][..];
@@ -68,7 +68,7 @@ pub fn p003() {
 
     vw.sort_by(|a, b| b.0.cmp(&a.0));
 
-    for (count, word) in vw.into_iter() {
+    for (_count, word) in vw.into_iter() {
         println!("{}", word);
     }
 }
