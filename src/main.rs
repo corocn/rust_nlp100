@@ -1,6 +1,6 @@
 // https://nlp100.github.io/ja/
 fn main() {
-    p005();
+    p006();
 }
 
 // 文字列”stressed”の文字を逆に（末尾から先頭に向かって）並べた文字列を得よ
@@ -137,4 +137,11 @@ pub fn p005_bigram<'a>(list: &'a Vec<&str>) -> Vec<Vec<&'a str>> {
     }
 
     bigram
+}
+
+// “paraparaparadise”と”paragraph”に含まれる文字bi-gramの集合を，
+// それぞれ, XとYとして求め，XとYの和集合，積集合，差集合を求めよ．さらに，’se’というbi-gramがXおよびYに含まれるかどうかを調べよ．
+pub fn p006() {
+    let text1 = String::from("paraparaparadise");
+    dbg!(text1);
 }
