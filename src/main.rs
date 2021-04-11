@@ -143,5 +143,5 @@ pub fn p005_bigram<'a>(list: &'a Vec<&str>) -> Vec<Vec<&'a str>> {
 // それぞれ, XとYとして求め，XとYの和集合，積集合，差集合を求めよ．さらに，’se’というbi-gramがXおよびYに含まれるかどうかを調べよ．
 pub fn p006() {
     let text1 = String::from("paraparaparadise");
-    dbg!(text1);
+    // dbg!(text1);
 }
