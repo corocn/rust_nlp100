@@ -143,6 +143,8 @@ pub fn create_bigram<'a>(list: &'a Vec<&str>, n: usize) -> Vec<Vec<&'a str>> {
 // “paraparaparadise”と”paragraph”に含まれる文字bi-gramの集合を，
 // それぞれ, XとYとして求め，XとYの和集合，積集合，差集合を求めよ．さらに，’se’というbi-gramがXおよびYに含まれるかどうかを調べよ．
 pub fn p006() {
-    let text1 = String::from("paraparaparadise");
-    // dbg!(text1);
+    let text = String::from("paraparaparadise");
+    let list: Vec<&str> = text.split("").filter(|&x| x != "").collect();
+    let v = create_bigram(&list, 2);
+    dbg!(v);
 }

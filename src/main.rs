@@ -3,5 +3,5 @@
 mod chapter1;
 
 fn main() {
-    chapter1::p005();
+    chapter1::p006();
 }
