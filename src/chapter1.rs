@@ -128,7 +128,7 @@ pub fn create_bigram<'a>(list: &'a Vec<&str>, n: usize) -> Vec<Vec<&'a str>> {
         for x in (0..n) {
             match list.get(i + x) {
                 Some(x) => add.push(*x),
-                None => ()
+                None => (),
             }
         }
 
