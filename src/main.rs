@@ -1,6 +1,6 @@
 // https://nlp100.github.io/ja/
 fn main() {
-    p006();
+    p005();
 }
 
 // 文字列”stressed”の文字を逆に（末尾から先頭に向かって）並べた文字列を得よ
@@ -113,16 +113,16 @@ pub fn p004() {
 pub fn p005() {
     let text = "I am an NLPer";
     let list: Vec<&str> = text.split(" ").collect();
-    let v = p005_bigram(&list);
+    let v = create_bigram(&list);
     dbg!(v);
 
     let text = "I am an NLPer";
     let list: Vec<&str> = text.split("").filter(|&x| x != "").collect();
-    let v = p005_bigram(&list);
+    let v = create_bigram(&list);
     dbg!(v);
 }
 
-pub fn p005_bigram<'a>(list: &'a Vec<&str>) -> Vec<Vec<&'a str>> {
+pub fn create_bigram<'a>(list: &'a Vec<&str>) -> Vec<Vec<&'a str>> {
     let mut bigram: Vec<Vec<&str>> = vec![];
 
     let i1 = list.iter();
